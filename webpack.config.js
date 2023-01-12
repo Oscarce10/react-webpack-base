@@ -30,14 +30,12 @@ module.exports = {
                     loader: 'babel-loader',
                 }
             },
-            // HTML plugin
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                    }
-                ]
+                test: /\.(png|jpe?g|gif)$/i,
+                type: "asset/resource",
+                generator:  {
+                    filename: "assets/images/[name][ext]"
+                }
             },
             // CSS/SASS plugin
             {
